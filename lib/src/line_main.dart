@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart'
     show StatelessWidget, Axis, Key, Color, Container, LayoutBuilder, BuildContext, BoxConstraints, SizedBox, CustomPaint, Size, Colors, Widget;
+import 'package:idkit_line/idkit_line.dart';
 import 'package:idkit_line/src/line_config.dart';
 import 'package:idkit_line/src/line_painter.dart';
 
@@ -22,6 +23,94 @@ class IDKitLine extends StatelessWidget {
     this.dashLength,
     this.interval,
   }) : super(key: key);
+
+  /// Factory method of solid line
+  factory IDKitLine.solid({
+    Key? key,
+    double? width,
+    double? height,
+    double? thickness,
+    Axis axis = Axis.horizontal,
+    LineAlign align = LineAlign.center,
+    Color? color,
+    double? indent,
+    double? endIndent,
+  }) =>
+      IDKitLine(
+        key: key,
+        width: width,
+        height: height,
+        thickness: thickness,
+        axis: axis,
+        align: align,
+        color: color,
+        indent: indent,
+        endIndent: endIndent,
+      );
+
+  /// Wavy line factory method
+  factory IDKitLine.wavy({
+    Key? key,
+    double? width,
+    double? height,
+    LineType type = LineType.wavy,
+    double? thickness,
+    Axis axis = Axis.horizontal,
+    LineAlign align = LineAlign.center,
+    Color? color,
+    double? indent,
+    double? endIndent,
+    double? a,
+    double? w,
+    double? k,
+  }) =>
+      IDKitLine(
+        key: key,
+        width: width,
+        height: height,
+        type: type,
+        thickness: thickness,
+        axis: axis,
+        align: align,
+        color: color,
+        indent: indent,
+        endIndent: endIndent,
+        a: a,
+        w: w,
+        k: k,
+      );
+
+  /// Dotted factory method
+  factory IDKitLine.dotted({
+    Key? key,
+    double? width,
+    double? height,
+    LineType type = LineType.dotted,
+    double? thickness,
+    Axis axis = Axis.horizontal,
+    LineAlign align = LineAlign.center,
+    Color? color,
+    double? indent,
+    double? endIndent,
+    DottedType dottedType = DottedType.dash,
+    double? dashLength,
+    double? interval,
+  }) =>
+      IDKitLine(
+        key: key,
+        width: width,
+        height: height,
+        type: type,
+        thickness: thickness,
+        axis: axis,
+        align: align,
+        color: color,
+        indent: indent,
+        endIndent: endIndent,
+        dottedType: dottedType,
+        dashLength: dashLength,
+        interval: interval,
+      );
 
   /// The width of the carrier to draw the line
   final double? width;
