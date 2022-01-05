@@ -1,7 +1,6 @@
 import 'dart:math' show sin;
-import 'package:flutter/material.dart';
-import 'package:idkit_line/idkit_line.dart';
-import 'package:idkit_line/src/line_config.dart' show LineAlign;
+import 'package:flutter/material.dart' show Canvas, Size, Axis, Paint, Offset, Path;
+import 'package:idkit_line/src/line_config.dart';
 
 mixin LinePainterMixin {
   /// Method of dashed line realization
@@ -39,11 +38,9 @@ mixin LinePainterMixin {
         // - - - -
         _itemLength = _dashLength + _interval;
     }
-
     // End error handling
     final double length = isAxis ? size.width : size.height;
     final double otherLength = isAxis ? size.height : size.width;
-
     final double lastLength = length - totleIndent - _dashLength;
     final int count = lastLength ~/ _itemLength;
     final double overLength = lastLength - count * _itemLength;

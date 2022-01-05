@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart' show Offset;
 
-/// 线的类型
+/// Type of drawing line
 enum LineType {
   solid,
   dotted,
   wavy,
 }
 
-/// 线的位置
+/// Line drawing position
 enum LineAlign {
   top,
   center,
@@ -16,14 +16,14 @@ enum LineAlign {
   right,
 }
 
-/// 虚线的类型
+/// Type of dashed line
 enum DottedType {
   dot,
   dash,
   dash_dot,
 }
 
-/// Offset 交换
+/// Exchange dx and dy of offset, and return the new offset
 extension IDKitOffset on Offset {
   Offset exchange() => Offset(dy, dx);
 }

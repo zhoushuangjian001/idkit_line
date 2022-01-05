@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show StatelessWidget, Axis, Key, Color, Container, LayoutBuilder, BuildContext, BoxConstraints, SizedBox, CustomPaint, Size, Colors, Widget;
 import 'package:idkit_line/src/line_config.dart';
 import 'package:idkit_line/src/line_painter.dart';
 
@@ -22,31 +23,49 @@ class IDKitLine extends StatelessWidget {
     this.interval,
   }) : super(key: key);
 
-  ///
+  /// The width of the carrier to draw the line
   final double? width;
 
-  ///
+  /// The height of the carrier to draw the line
   final double? height;
 
+  /// Type of drawing line
   final LineType type;
 
+  /// The thickness of the drawn line
   final double? thickness;
 
+  /// The direction of the drawn line
   final Axis axis;
 
+  /// The position of the drawn line
   final LineAlign align;
 
+  /// The color of the drawn line
   final Color? color;
 
+  /// Start indentation of the line drawn
   final double? indent;
+
+  /// End indentation of the line drawn
   final double? endIndent;
 
+  /// Draw the amplitude of the wave line
   final double? a;
+
+  /// Angular velocity for drawing wavy lines
   final double? w;
+
+  /// Draw the offset of the wavy line
   final double? k;
 
+  /// Type of dashed line
   final DottedType dottedType;
+
+  /// The length of the dashed line
   final double? dashLength;
+
+  /// Space between dotted elements
   final double? interval;
 
   @override
