@@ -18,6 +18,8 @@ class IDKitLine extends StatelessWidget {
     this.w,
     this.k,
     this.dottedType = DottedType.dash,
+    this.dashLength,
+    this.interval,
   }) : super(key: key);
 
   ///
@@ -44,6 +46,8 @@ class IDKitLine extends StatelessWidget {
   final double? k;
 
   final DottedType dottedType;
+  final double? dashLength;
+  final double? interval;
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +77,8 @@ class IDKitLine extends StatelessWidget {
                 w: w,
                 k: k,
                 dottedType: dottedType,
+                dashLength: dashLength,
+                interval: interval,
               ),
             );
           },

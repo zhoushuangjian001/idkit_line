@@ -16,6 +16,8 @@ class LinePainter extends CustomPainter with LinePainterMixin {
     this.a,
     this.w,
     this.k,
+    this.dashLength,
+    this.interval,
   });
   final BuildContext context;
   final LineType? type;
@@ -29,7 +31,8 @@ class LinePainter extends CustomPainter with LinePainterMixin {
   final double? w;
   final double? k;
   final DottedType? dottedType;
-
+  final double? dashLength;
+  final double? interval;
   @override
   void paint(Canvas canvas, Size size) {
     /// 画笔设置
@@ -45,6 +48,11 @@ class LinePainter extends CustomPainter with LinePainterMixin {
           size: size,
           paint: paint,
           thickness: _thickness,
+          align: align,
+          axis: axis,
+          dashLength: dashLength,
+          interval: interval,
+          type: dottedType,
         );
         break;
       case LineType.wavy:
