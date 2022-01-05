@@ -162,35 +162,32 @@ class IDKitLine extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: Container(
-        color: Colors.red,
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            Size painterSize = Size.zero;
-            if (constraints.isTight) {
-              painterSize = Size(constraints.minWidth, constraints.minHeight);
-            } else if (constraints.isNormalized) {
-              painterSize = Size(constraints.maxWidth, constraints.maxHeight);
-            }
-            return CustomPaint(
-              size: painterSize,
-              painter: LinePainter(
-                context,
-                type: type,
-                axis: axis,
-                align: align,
-                thickness: thickness,
-                color: color,
-                a: a,
-                w: w,
-                k: k,
-                dottedType: dottedType,
-                dashLength: dashLength,
-                interval: interval,
-              ),
-            );
-          },
-        ),
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          Size painterSize = Size.zero;
+          if (constraints.isTight) {
+            painterSize = Size(constraints.minWidth, constraints.minHeight);
+          } else if (constraints.isNormalized) {
+            painterSize = Size(constraints.maxWidth, constraints.maxHeight == double.infinity ? 1 : constraints.maxHeight);
+          }
+          return CustomPaint(
+            size: painterSize,
+            painter: LinePainter(
+              context,
+              type: type,
+              axis: axis,
+              align: align,
+              thickness: thickness,
+              color: color,
+              a: a,
+              w: w,
+              k: k,
+              dottedType: dottedType,
+              dashLength: dashLength,
+              interval: interval,
+            ),
+          );
+        },
       ),
     );
   }

@@ -39,19 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            IDKitLine(
-              height: 120,
-              width: 200,
-              align: LineAlign.right,
-              axis: Axis.vertical,
+            IDKitLine.solid(
+              height: 20,
               thickness: 2,
-              type: LineType.dotted,
-              dottedType: DottedType.dash_dot,
-              w: 0.2,
-              dashLength: 2,
-              interval: 4,
-              color: Colors.purple,
             ),
+            // IDKitLine.dotted(),
+            // IDKitLine.wavy(),
           ],
         ),
       ),
