@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart'
-    show StatelessWidget, Axis, Key, Color, Container, LayoutBuilder, BuildContext, BoxConstraints, SizedBox, CustomPaint, Size, Colors, Widget;
+    show StatelessWidget, Axis, Key, Color, LayoutBuilder, BuildContext, BoxConstraints, SizedBox, CustomPaint, Size, Colors, Widget;
 import 'package:idkit_line/idkit_line.dart';
 import 'package:idkit_line/src/line_config.dart';
 import 'package:idkit_line/src/line_painter.dart';
@@ -22,7 +22,8 @@ class IDKitLine extends StatelessWidget {
     this.dottedType = DottedType.dash,
     this.dashLength,
     this.interval,
-  }) : super(key: key);
+  })  : assert(!(axis == Axis.vertical && height == null), '\nPoint:Draw a line in the vertical direction, the height must be set.'),
+        super(key: key);
 
   /// Factory method of solid line
   factory IDKitLine.solid({

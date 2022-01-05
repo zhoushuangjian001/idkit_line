@@ -39,12 +39,83 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            IDKitLine.solid(
-              height: 20,
-              thickness: 2,
-            ),
+            // IDKitLine.solid(),
+            // const SizedBox(height: 20),
+            // IDKitLine.solid(
+            //   color: Colors.red,
+            //   width: 300,
+            //   height: 5,
+            // ),
+            // const SizedBox(height: 20),
+            // IDKitLine.solid(
+            //   color: Colors.purple,
+            //   width: 300,
+            //   axis: Axis.vertical,
+            //   height: 20,
+            // ),
+            // const SizedBox(height: 20),
             // IDKitLine.dotted(),
+            // const SizedBox(height: 20),
+            // IDKitLine.dotted(
+            //   dashLength: 5,
+            //   interval: 3,
+            // ),
+            // const SizedBox(height: 20),
+            // IDKitLine.dotted(
+            //   width: 200,
+            //   color: Colors.purple,
+            //   dashLength: 5,
+            //   interval: 3,
+            // ),
+            // const SizedBox(height: 20),
+            // IDKitLine.dotted(
+            //   dashLength: 5,
+            //   interval: 3,
+            //   dottedType: DottedType.dash_dot,
+            // ),
+            // const SizedBox(height: 20),
+            // IDKitLine.dotted(
+            //   width: 200,
+            //   color: Colors.purple,
+            //   dashLength: 5,
+            //   interval: 3,
+            //   dottedType: DottedType.dash_dot,
+            // ),
+            // const SizedBox(height: 20),
+            // Row(
+            //   children: <Widget>[
+            //     IDKitLine.dotted(
+            //       width: 200,
+            //       height: 30,
+            //       color: Colors.purple,
+            //       dashLength: 5,
+            //       interval: 3,
+            //       axis: Axis.vertical,
+            //     ),
+            //     IDKitLine.dotted(
+            //       width: 200,
+            //       height: 30,
+            //       color: Colors.purple,
+            //       dashLength: 5,
+            //       interval: 3,
+            //       dottedType: DottedType.dash_dot,
+            //       axis: Axis.vertical,
+            //     )
+            //   ],
+            // ),
+            // const SizedBox(height: 20),
             // IDKitLine.wavy(),
+            // const SizedBox(height: 20),
+            // IDKitLine.wavy(
+            //   color: Colors.red,
+            //   width: 300,
+            // ),
+            // const SizedBox(height: 20),
+            IDKitLine.wavy(
+              axis: Axis.vertical,
+              a: 6,
+              w: 0.2,
+            ),
           ],
         ),
       ),
