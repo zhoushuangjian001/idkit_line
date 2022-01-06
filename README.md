@@ -7,71 +7,85 @@ This is a convenient development kit for the expansion of the requirements of th
 - Solid line
 
   ```dart
-    IDKitLine.solid(),
-    const SizedBox(height: 20),
-    IDKitLine.solid(
-        color: Colors.red,
-        width: 300,
-        height: 5,
-        thickness: 3,
-    ),
-    const SizedBox(height: 20),
-    IDKitLine.solid(
-        color: Colors.purple,
-        width: 300,
-        axis: Axis.vertical,
-        height: 20,
-    )
+  IDKitLine.solid(),
+  const SizedBox(height: 20),
+  IDKitLine.solid(
+      color: Colors.red,
+      width: 300,
+      height: 5,
+      thickness: 3,
+  ),
+  const SizedBox(height: 20),
+  IDKitLine.solid(
+      color: Colors.purple,
+      width: 300,
+      axis: Axis.vertical,
+      height: 20,
+  )
   ```
 
 - Dotted line
   ```dart
-    IDKitLine.dotted(),
-    const SizedBox(height: 20),
-    IDKitLine.dotted(
-        dashLength: 5,
-        interval: 3,
-        thickness: 3,
-    ),
-    const SizedBox(height: 20),
-    IDKitLine.dotted(
-        width: 200,
-        color: Colors.purple,
-        dashLength: 5,
-        interval: 3,
-    ),
-    const SizedBox(height: 20),
-    IDKitLine.dotted(
-        dashLength: 5,
-        interval: 3,
-        dottedType: DottedType.dash_dot,
-    ),
-    const SizedBox(height: 20),
-    IDKitLine.dotted(
-        width: 200,
-        color: Colors.purple,
-        dashLength: 10,
-        interval: 3,
-        thickness: 4,
-        dottedType: DottedType.dash_dot,
-    )
+  IDKitLine.dotted(),
+  const SizedBox(height: 20),
+  IDKitLine.dotted(
+      dashLength: 5,
+      interval: 3,
+      thickness: 3,
+  ),
+  const SizedBox(height: 20),
+  IDKitLine.dotted(
+      width: 200,
+      color: Colors.purple,
+      dashLength: 5,
+      interval: 3,
+  ),
+  const SizedBox(height: 20),
+  IDKitLine.dotted(
+      dashLength: 5,
+      interval: 3,
+      dottedType: DottedType.dash_dot,
+  ),
+  const SizedBox(height: 20),
+  IDKitLine.dotted(
+      width: 200,
+      color: Colors.purple,
+      dashLength: 10,
+      interval: 3,
+      thickness: 4,
+      dottedType: DottedType.dash_dot,
+  )
   ```
 - Wavy line
   ```dart
-    IDKitLine.wavy(),
-    const SizedBox(height: 20),
-    IDKitLine.wavy(
-        color: Colors.red,
-        width: 300,
-    ),
-    const SizedBox(height: 20),
-    IDKitLine.wavy(
-        axis: Axis.vertical,
-        height: 200,
-        thickness: 4,
-        a: 6,
-        w: 0.2,
-    )
+  IDKitLine.wavy(),
+  const SizedBox(height: 20),
+  IDKitLine.wavy(
+      color: Colors.red,
+      width: 300,
+  ),
+  const SizedBox(height: 20),
+  IDKitLine.wavy(
+      axis: Axis.vertical,
+      height: 200,
+      thickness: 4,
+      a: 6,
+      w: 0.2,
+  )
+  ```
+- Delete line
+  ```dart
+  IDKitLine.delete(
+    child: const Text('¥：10'),
+    thickness: 2,
+    color: Colors.red,
+  ),
+  const SizedBox(height: 20),
+  IDKitLine.delete(
+    child: const Text('¥：10000000000'),
+    thickness: 4,
+    color: Colors.purple,
+  ),
   ```
 
 ## Point

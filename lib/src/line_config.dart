@@ -5,6 +5,7 @@ enum LineType {
   solid,
   dotted,
   wavy,
+  delete,
 }
 
 /// Line drawing position

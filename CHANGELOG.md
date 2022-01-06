@@ -21,6 +21,11 @@ This is a convenient development kit for the expansion of the requirements of th
   /// Dotted factory method
   factory IDKitLine.dotted({...}) =>IDKitLine;
   ```
+- Delete lin
+  ```dart
+  /// Delete the factory initialization method of the line
+  factory IDKitLine.delete({...}) =>IDKitLine;
+  ```
 
 #### Hint
 

@@ -22,8 +22,23 @@ class IDKitLine extends StatelessWidget {
     this.dottedType = DottedType.dash,
     this.dashLength,
     this.interval,
+    this.child,
   })  : assert(!(axis == Axis.vertical && height == null), '\nPoint:Draw a line in the vertical direction, the height must be set.'),
         super(key: key);
+
+  /// Factory method for drawing strikethrough
+  factory IDKitLine.delete({
+    Key? key,
+    double? thickness,
+    Color? color,
+    Widget? child,
+  }) =>
+      IDKitLine(
+        key: key,
+        thickness: thickness,
+        color: color,
+        child: child,
+      );
 
   /// Factory method of solid line
   factory IDKitLine.solid({
@@ -158,6 +173,8 @@ class IDKitLine extends StatelessWidget {
   /// Space between dotted elements
   final double? interval;
 
+  final Widget? child;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -171,22 +188,36 @@ class IDKitLine extends StatelessWidget {
           } else if (constraints.isNormalized) {
             painterSize = Size(constraints.maxWidth, constraints.maxHeight == double.infinity ? 1 : constraints.maxHeight);
           }
+          final bool isForeground = type == LineType.delete;
           return CustomPaint(
             size: painterSize,
-            painter: LinePainter(
-              context,
-              type: type,
-              axis: axis,
-              align: align,
-              thickness: thickness,
-              color: color,
-              a: a,
-              w: w,
-              k: k,
-              dottedType: dottedType,
-              dashLength: dashLength,
-              interval: interval,
-            ),
+            foregroundPainter: isForeground
+                ? LinePainter(
+                    context,
+                    type: LineType.solid,
+                    axis: Axis.horizontal,
+                    align: LineAlign.center,
+                    thickness: thickness,
+                    color: color,
+                  )
+                : null,
+            painter: isForeground
+                ? null
+                : LinePainter(
+                    context,
+                    type: type,
+                    axis: axis,
+                    align: align,
+                    thickness: thickness,
+                    color: color,
+                    a: a,
+                    w: w,
+                    k: k,
+                    dottedType: dottedType,
+                    dashLength: dashLength,
+                    interval: interval,
+                  ),
+            child: child,
           );
         },
       ),

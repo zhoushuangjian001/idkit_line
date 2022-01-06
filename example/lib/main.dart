@@ -121,6 +121,18 @@ class _MyHomePageState extends State<MyHomePage> {
               a: 6,
               w: 0.2,
             ),
+            const SizedBox(height: 20),
+            IDKitLine.delete(
+              child: const Text('¥：10'),
+              thickness: 2,
+              color: Colors.red,
+            ),
+            const SizedBox(height: 20),
+            IDKitLine.delete(
+              child: const Text('¥：10000000000'),
+              thickness: 4,
+              color: Colors.purple,
+            ),
           ],
         ),
       ),
